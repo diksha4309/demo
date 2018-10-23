@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <div class="count">
+    <button (click)=counter()>Increase count</button>
+    <span>{{count}}</span>
+    <div *ngFor = "let task of tasks">
+      <app-todos [task]= task (modifyTask) = 'catchTask($event)'></app-todos>
+    </div>
+    <div>
+      <input [(ngModel)]='name'>
+    </div>
+  </div>
+  <app-simplehttp></app-simplehttp>
+</div>
